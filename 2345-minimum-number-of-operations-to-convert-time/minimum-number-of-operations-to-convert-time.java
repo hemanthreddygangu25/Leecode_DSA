@@ -3,28 +3,8 @@ class Solution {
         int start=gettime(current);
         int end=gettime(correct);
         int count=0;
-        while(start<end)
-        {
-            int diff=end-start;
-            if(diff>=60)
-            {
-                start+=60;
-            }
-            else if(diff>=15)
-            {
-                start+=15;
-            }
-            else if(diff>=5)
-            {
-                start+=5;
-            }
-            else
-            {
-                start+=1;
-            }
-            count++;
-        }
-        return count;
+        int diff=end-start;
+        return diff / 60 + (diff % 60) / 15 + (diff % 15) / 5 + diff % 5;
         
     }
     public int gettime(String s)
