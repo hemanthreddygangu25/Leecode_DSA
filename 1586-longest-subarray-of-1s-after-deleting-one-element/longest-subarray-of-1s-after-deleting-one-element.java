@@ -8,7 +8,7 @@ class Solution {
         {
           count++;
         }
-         while (count > 1) {
+         if (count > 1) {
                 if (nums[i] == 0) {
                     count--;
                 }
