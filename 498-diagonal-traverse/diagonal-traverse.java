@@ -7,7 +7,7 @@ class Solution {
         int i = 0;
         while (row < m && col < n) {
             if (up) {
-                while (row > 0 && col < n - 1) {
+                while (row >0 && col < n - 1) {
                     a[i++] = mat[row][col];
                     row--;
                     col++;
