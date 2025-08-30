@@ -7,23 +7,23 @@ public:
         }
         int m=mat.size();
         int n=mat[0].size();
-        int maxi=0;
-        vector<int>ans;
+        int maxi=INT_MAX;
+      
         for(int i=0;i<m;i++){
             int sum=0;
             for(int j=0;j<n;j++){
               sum=max(sum,mpp[mat[i][j]]);
             }
-            ans.push_back(sum);
+            maxi=min(maxi,sum);
+           
         }
         for(int i=0;i<n;i++){
             int sum=0;
             for(int j=0;j<m;j++){
                 sum=max(sum,mpp[mat[j][i]]);
             }
-            ans.push_back(sum);
+           maxi=min(maxi,sum);
         }
-        sort(ans.begin(),ans.end());
-return ans[0];
+        return maxi;
     }
 };
